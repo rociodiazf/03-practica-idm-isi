@@ -8,10 +8,11 @@ BISIESTO:
 			b2.1.1: Sí es múltiplo de 4
 			b2.1.2: No es múltiplo de 4
 		b2.2: Múltiplos de 100
-			b2.2.1: Sí es múltiplo de 100
+			b2.2.1: Sí es múltiplo de 100. Si se cumple esta también se cumple la b2.1.1
+			Todo múltiplo de 100 también lo es de 4
 			b2.2.2: No es múltiplo de 100
 		b2.3: Múltiplos de 400
-			b2.3.1: Sí es múltiplo de 400
+			b2.3.1: Sí es múltiplo de 400. Todo múltiplo de 400 también lo es de 100 y de 4
 			b2.3.2: No es múltiplo de 400
 			
 NÚMERO ROMANOS:
