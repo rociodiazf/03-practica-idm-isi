@@ -1,0 +1,51 @@
+BISIESTO:
+	Bloque 1: Caracterización según tipo del parámetro
+		b1.1: Números negativos
+		b1.2: Números positivos
+		b1.3: El cero
+	Bloque 2: Caracterización según funcionalidad 
+		b2.1: Múltiplos de 4
+			b2.1.1: Sí es múltiplo de 4
+			b2.1.2: No es múltiplo de 4
+		b2.2: Múltiplos de 100
+			b2.2.1: Sí es múltiplo de 100
+			b2.2.2: No es múltiplo de 100
+		b2.3: Múltiplos de 400
+			b2.3.1: Sí es múltiplo de 400
+			b2.3.2: No es múltiplo de 400
+			
+NÚMERO ROMANOS:
+	Bloque 1: Caracterización según tipo del parámetro
+		b1.1: Letras de la A-Z
+		b1.2: Letras que no vayan de la A-Z
+	Bloque 2: Caracterización según funcionalidad 
+		b2.1: Es una letra válida, esto es I, V, X, L, C, D, M
+			b2.1.1: Sí es válida
+			b2.1.2: No es válida
+		b2.2: Si hay una letra que aparece varias veces consecutivas, debe ser I, X, C y M
+			b2.2.1: Sí son de alguna de esas letras
+			b2.2.2: No es ninguna de esas letras
+		b2.3: Si aparece una letra duplicada debe aparecer como mucho 3 veces.  
+			b2.3.1: Sí aparece 3 veces o menos
+			b2.3.2: Aparece 4 veces o más
+			
+EMBOTELLADORA:
+	Bloque 1: Caracterización según tipo del parámetro
+		b1.1: Números negativos
+		b1.2: Números positivos
+		b1.3: El cero
+	Bloque 2: Caracterización según tipo del parámetro
+		b2.1: Números negativos
+		b2.2: Números positivos
+		b2.3: El cero
+	Bloque 3: Caracterización según tipo del parámetro
+		b3.1: Números negativos
+		b3.2: Números positivos
+		b3.3: El cero
+	Bloque 4: Caracterización según funcionalidad 
+		b4.1: Con solución, es decir, se puede embotellar todos los litros pedidos
+		b4.2: Sin solución, es decir, no se puede embotellar todos los litros pedidos
+		
+		
+
+
