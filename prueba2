@@ -1,0 +1,15 @@
+BISIESTO:
+	Bloque 1: Caracterización según tipo del parámetro
+		b1.1: Números negativos
+		b1.2: Números positivos
+		b1.3: El cero
+	Bloque 2: Caracterización según funcionalidad del parámetro
+		b2.1: Múltiplos de 4
+			b2.1.1: Sí es múltiplo de 4
+			b2.1.2: No es múltiplo de 4
+		b2.2: Múltiplos de 100
+			b2.2.1: Sí es múltiplo de 100
+			b2.2.2: No es múltiplo de 100
+		b2.3: Múltiplos de 400
+			b2.3.1: Sí es múltiplo de 400
+			b2.3.2: No es múltiplo de 400
