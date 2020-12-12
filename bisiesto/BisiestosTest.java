@@ -7,8 +7,9 @@
 import static org.junit.Assert.*;
 import org.junit.*;
 import java.util.*;
+import java.security.InvalidParameterException;
 
-public class findLastTest
+public class BisiestosTest
 {
 
    private int year;  // Test fixture
@@ -22,7 +23,7 @@ public class findLastTest
    	year = -4;
    	try {
 		Bisiestos.esBisiesto(year);
-	}catch (InvalidParameter e) {
+	}catch (InvalidParameterException e) {
 		return;
 	}
 	fail ("InvalidParameter Exception expected");
@@ -34,8 +35,8 @@ public class findLastTest
    {
    	year = -1;
    	try {
-		Bisiesto.esBisiesto(year);
-	}catch (InvalidParameter e) {
+		Bisiestos.esBisiesto(year);
+	}catch (InvalidParameterException e) {
 		return;
 	}
 	fail ("InvalidParameter Exception expected");
@@ -48,8 +49,8 @@ public class findLastTest
    {
    	year = -100;
    	try {
-		Bisiesto.esBisiesto(year);
-	}catch (InvalidParameter e) {
+		Bisiestos.esBisiesto(year);
+	}catch (InvalidParameterException e) {
 		return;
 	}
 	fail ("InvalidParameter Exception expected");
@@ -63,8 +64,8 @@ public class findLastTest
    {
    	year = -400;
    	try {
-		Bisiesto.esBisiesto(year);
-	}catch (InvalidParameter e) {
+		Bisiestos.esBisiesto(year);
+	}catch (InvalidParameterException e) {
 		return;
 	}
 	fail ("InvalidParameter Exception expected");
@@ -76,13 +77,13 @@ public class findLastTest
    {
    	year = -200;
    	try {
-		Bisiesto.esBisiesto(year);
-	}catch (InvalidParameter e) {
+		Bisiestos.esBisiesto(year);
+	}catch (InvalidParameterException e) {
 		return;
 	}
 	fail ("InvalidParameter Exception expected");
    }
-   --------
+   //--------
    //BLOQUE 2
    //test que implementa la caracterización del bloque b1.2 y b2.1.1 y b2.2.2 y b2.3.2
    @Test
@@ -133,8 +134,8 @@ public class findLastTest
    {
    	year = 0;
    	try {
-		Bisiesto.esBisiesto(year);
-	}catch (InvalidParameter e) {
+		Bisiestos.esBisiesto(year);
+	}catch (InvalidParameterException e) {
 		return;
 	}
 	fail ("InvalidParameter Exception expected");
