@@ -30,22 +30,36 @@ NÚMERO ROMANOS:
 			b2.3.2: Aparece 4 veces o más
 			
 EMBOTELLADORA:
-	Bloque 1: Caracterización según tipo del parámetro
+	Bloque 1: Caracterización según tipo del parámetro botellas pequeñas
 		b1.1: Números negativos
 		b1.2: Números positivos
 		b1.3: El cero
-	Bloque 2: Caracterización según tipo del parámetro
+	Bloque 2: Caracterización según tipo del parámetro botellas grandes
 		b2.1: Números negativos
 		b2.2: Números positivos
 		b2.3: El cero
-	Bloque 3: Caracterización según tipo del parámetro
+	Bloque 3: Caracterización según tipo del parámetro litros a almacenar
 		b3.1: Números negativos
 		b3.2: Números positivos
 		b3.3: El cero
 	Bloque 4: Caracterización según funcionalidad 
 		b4.1: Con solución, es decir, se puede embotellar todos los litros pedidos
 		b4.2: Sin solución, es decir, no se puede embotellar todos los litros pedidos
-		
+
+BLACK FRIDAY:
+	Bloque 1: Caracterización según tipo del parámetro precio original
+		b1.1: Números negativos
+		b1.2: Números positivos
+		b1.3: El cero
+	Bloque 2: Caracterización según tipo del parámetro porcentaje descuento
+		b2.1: Números negativos
+		b2.2: Números positivos
+			b2.2: Número mayor a 100
+			b2.2: Número menor o igual a 100
+		b2.3: El cero
+	Bloque 3: Caracterización según funcionalidad 
+		b4.1: Es el día del black Friday
+		b4.2: No es el día del black Friday		
 		
 
 
