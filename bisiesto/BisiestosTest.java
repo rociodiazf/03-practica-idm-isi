@@ -124,7 +124,7 @@ public class BisiestosTest
    @Test
    public void test_b12_b232()
    {
-   	year = 200;
+   	year = 2500;
    	assertFalse(Bisiestos.esBisiesto(year));
    }
    // -------
