@@ -26,11 +26,11 @@ public class EmbotelladoraTests
    	b_g = -9;
    	litros = -1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.1 y b2.1 y b3.2
@@ -41,11 +41,11 @@ public class EmbotelladoraTests
    	b_g = -9;
    	litros = 1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.1 y b2.2 y b3.2
@@ -56,11 +56,11 @@ public class EmbotelladoraTests
    	b_g = 1;
    	litros = 1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.1 y b2.2 y b3.1
@@ -71,11 +71,11 @@ public class EmbotelladoraTests
    	b_g = 1;
    	litros = -1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.2 y b2.1 y b3.1
@@ -86,11 +86,11 @@ public class EmbotelladoraTests
    	b_g = -1;
    	litros = -1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.2 y b2.1 y b3.2
@@ -101,11 +101,11 @@ public class EmbotelladoraTests
    	b_g = -1;
    	litros = 1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.2 y b2.2 y b3.1
@@ -116,11 +116,11 @@ public class EmbotelladoraTests
    	b_g = 1;
    	litros = -1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //------------
@@ -129,20 +129,20 @@ public class EmbotelladoraTests
    @Test
    public void test_b12_b22_b32_b41()
    {
-   	yb_p = 1;
+   	b_p = 1;
    	b_g = 1;
    	litros = 1;
-   	assertEquals(Embotelladora.calcularBotellasPequenas(b_p, b_g, litros), 0);
+   	assertEquals(Embotelladora.calculaBotellasPequenas(b_p, b_g, litros), 0);
    }
    //test que implementa la caracterización del bloque b1.2 y b2.2 y b3.2 y b4.2
    @Test
    public void test_b12_b22_b32_b42()
    {
-   	yb_p = 1;
+   	b_p = 1;
    	b_g = 1;
    	litros = 500;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
 	}catch (NoSolution e) {
 		return;
 	}
@@ -152,12 +152,12 @@ public class EmbotelladoraTests
    
    //test que implementa la caracterización del bloque b1.3 y b2.3 y b3.3 y b4.2
    @Test
-   public void test_b12_b22_b31()
+   public void test_b13_b23_b33()
    {
-   	yb_p = 0;
+   	b_p = 0;
    	b_g = 0;
    	litros = 0;
-   	assertEquals(Embotelladora.calcularBotellasPequenas(b_p, b_g, litros), 0);
+   	assertEquals(Embotelladora.calculaBotellasPequenas(b_p, b_g, litros), 0);
 
    }
    //TESTS QUE COMBINA NÚMEROS NEGATIVOS Y EL 0
@@ -171,11 +171,11 @@ public class EmbotelladoraTests
    	b_g = 0;
    	litros = -1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.3 y b2.1 y b3.3
@@ -186,11 +186,11 @@ public class EmbotelladoraTests
    	b_g = -1;
    	litros = 0;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.3 y b2.1 y b3.1
@@ -201,11 +201,11 @@ public class EmbotelladoraTests
    	b_g = -15;
    	litros = -1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.1 y b2.3 y b3.3
@@ -216,11 +216,11 @@ public class EmbotelladoraTests
    	b_g = 0;
    	litros = 0;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.1 y b2.3 y b3.1
@@ -231,11 +231,11 @@ public class EmbotelladoraTests
    	b_g = 0;
    	litros = -1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.1 y b2.1 y b3.3
@@ -246,11 +246,11 @@ public class EmbotelladoraTests
    	b_g = -1;
    	litros = 0;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //TESTS QUE COMBINAN BLOQUES PARA NÚMEROS POSITIVOS Y CERO
@@ -263,7 +263,7 @@ public class EmbotelladoraTests
    	b_g = 0;
    	litros = 1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
 	}catch (NoSolution e) {
 		return;
 	}
@@ -277,7 +277,7 @@ public class EmbotelladoraTests
    	b_p = 0;
    	b_g = 1;
    	litros = 0;
-   	assertEquals(Embotelladora.calcularBotellasPequenas(b_p, b_g, litros), 0);
+   	assertEquals(Embotelladora.calculaBotellasPequenas(b_p, b_g, litros), 0);
 
    }
    //test que implementa la caracterización del bloque b1.3 y b2.2 y b3.2 y b4.1
@@ -287,7 +287,7 @@ public class EmbotelladoraTests
    	b_p = 0;
    	b_g = 1;
    	litros = 1;
-   	assertEquals(Embotelladora.calcularBotellasPequenas(b_p, b_g, litros), 0);
+   	assertEquals(Embotelladora.calculaBotellasPequenas(b_p, b_g, litros), 0);
 
    }
    //test que implementa la caracterización del bloque b1.2 y b2.3 y b3.3 y b4.1
@@ -297,7 +297,7 @@ public class EmbotelladoraTests
    	b_p = 1;
    	b_g = 0;
    	litros = 0;
-   	assertEquals(Embotelladora.calcularBotellasPequenas(b_p, b_g, litros), 0);
+   	assertEquals(Embotelladora.calculaBotellasPequenas(b_p, b_g, litros), 0);
 
    }
    //test que implementa la caracterización del bloque b1.2 y b2.3 y b3.2 y b4.1
@@ -307,18 +307,18 @@ public class EmbotelladoraTests
    	b_p = 1;
    	b_g = 0;
    	litros = 1;
-   	assertEquals(Embotelladora.calcularBotellasPequenas(b_p, b_g, litros), 1);
+   	assertEquals(Embotelladora.calculaBotellasPequenas(b_p, b_g, litros), 1);
 
    }
    //test que implementa la caracterización del bloque b1.2 y b2.3 y b3.2 y b4.2
    @Test
-   public void test_b12_b23_b32_b41()
+   public void test_b12_b23_b32_b42()
    {
    	b_p = 1;
    	b_g = 0;
    	litros = 2;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
 	}catch (NoSolution e) {
 		return;
 	}
@@ -332,7 +332,7 @@ public class EmbotelladoraTests
    	b_p = 1;
    	b_g = 1;
    	litros = 0;
-   	assertEquals(Embotelladora.calcularBotellasPequenas(b_p, b_g, litros), 0);
+   	assertEquals(Embotelladora.calculaBotellasPequenas(b_p, b_g, litros), 0);
 
    }
    //------------
@@ -345,11 +345,11 @@ public class EmbotelladoraTests
    	b_g = -1;
    	litros = 1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.3 y b2.2 y b3.1
@@ -360,11 +360,11 @@ public class EmbotelladoraTests
    	b_g = 1;
    	litros = -1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
   //test que implementa la caracterización del bloque b1.2 y b2.1 y b3.3
@@ -375,11 +375,11 @@ public class EmbotelladoraTests
    	b_g = -1;
    	litros = 0;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.1 y b2.2 y b3.3
@@ -390,11 +390,11 @@ public class EmbotelladoraTests
    	b_g = 1;
    	litros = 0;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.1 y b2.3 y b3.2
@@ -405,11 +405,11 @@ public class EmbotelladoraTests
    	b_g = 0;
    	litros = 1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.2 y b2.3 y b3.1
@@ -420,11 +420,11 @@ public class EmbotelladoraTests
    	b_g = 0;
    	litros = -1;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
-	}catch (InvalidParameterException e) {
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
+	}catch (NoSolution e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("NoSolution Exception expected");
    }
    //-----
    //TEST EXTRA PARA PROBAR LA FUNCIONALIDAD MÁS A FONDO
@@ -433,20 +433,20 @@ public class EmbotelladoraTests
    @Test
    public void test_b12_b22_b32_b41_Extra()
    {
-   	yb_p = 10;
+   	b_p = 10;
    	b_g = 4;
    	litros = 27;
-   	assertEquals(Embotelladora.calcularBotellasPequenas(b_p, b_g, litros), 7);
+   	assertEquals(Embotelladora.calculaBotellasPequenas(b_p, b_g, litros), 7);
    }
    //test que implementa la caracterización del bloque b1.2 y b2.2 y b3.2 y b4.2
    @Test
    public void test_b12_b22_b32_b42_Extra()
    {
-   	yb_p = 2;
+   	b_p = 2;
    	b_g = 4;
    	litros = 27;
    	try {
-		Embotelladora.calcularBotellasPequenas(b_p, b_g, litros);
+		Embotelladora.calculaBotellasPequenas(b_p, b_g, litros);
 	}catch (NoSolution e) {
 		return;
 	}
