@@ -19,8 +19,8 @@ public class DescuentoBlackFridayTests
    @Test
    public void test_b11_b21()
    {
-    pOriginal = -5;
-    porcDescuento = -10;
+    pOriginal = -5.00;
+    porcDescuento = -10.00;
 
     try {
       DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento);
@@ -34,8 +34,8 @@ public class DescuentoBlackFridayTests
    @Test
    public void test_b12_b21()
    {
-    pOriginal = 80;
-    porcDescuento = -10;
+    pOriginal = 80.00;
+    porcDescuento = -10.00;
 
     try {
       DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento);
@@ -49,8 +49,8 @@ public class DescuentoBlackFridayTests
    @Test
    public void test_b11_b22()
    {
-    pOriginal = -80;
-    porcDescuento = 50;
+    pOriginal = -80.00;
+    porcDescuento = 50.00;
 
     try {
       DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento);
@@ -65,37 +65,37 @@ public class DescuentoBlackFridayTests
   @Test
   public void test_b12_b22()
   {
-  pOriginal = 80;
-  porcDescuento = 50;
+  pOriginal = 80.00;
+  porcDescuento = 50.00;
 
-  assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 40);
+  assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 40.00);
   }
 
   //test que implementa la caracterización del bloque b1.3 y b2.2
   @Test
   public void test_b13_b22()
   {
-   pOriginal = 0;
-   porcDescuento = 50;
-   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 0);
+   pOriginal = 0.00;
+   porcDescuento = 50.00;
+   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 0.00);
   }
 
   //test que implementa la caracterización del bloque b1.2 y b2.3
   @Test
   public void test_b11_b22()
   {
-   pOriginal = 45;
-   porcDescuento = 0;
-   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 45);
+   pOriginal = 45.00;
+   porcDescuento = 0.00;
+   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 45.00);
   }
 
   //test que implementa la caracterización del bloque b1.3 y b2.3
   @Test
   public void test_b13_b23()
   {
-   pOriginal = 0;
-   porcDescuento = 0;
-   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 0);
+   pOriginal = 0.00;
+   porcDescuento = 0.00;
+   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 0.00);
   }
 
   //Segun el porcentaje de descuento...
@@ -103,8 +103,8 @@ public class DescuentoBlackFridayTests
   @Test
   public void test_b221()
   {
-   pOriginal = 50;
-   porcDescuento = 150;
+   pOriginal = 50.00;
+   porcDescuento = 150.00;
    try {
      DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento);
    }catch (IllegalArgumentException e) {
@@ -117,9 +117,9 @@ public class DescuentoBlackFridayTests
   @Test
   public void test_CasoFrontera1()
   {
-   pOriginal = 50;
-   porcDescuento = 100;
-   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 0);
+   pOriginal = 50.00;
+   porcDescuento = 100.00;
+   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 0.00);
 
   }
 
@@ -127,9 +127,9 @@ public class DescuentoBlackFridayTests
   @Test
   public void test_CasoFrontera2()
   {
-   pOriginal = 50;
-   porcDescuento = 0;
-   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 50);
+   pOriginal = 50.00;
+   porcDescuento = 0.00;
+   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 50.00);
 
   }
 
