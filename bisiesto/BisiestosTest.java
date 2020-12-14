@@ -7,7 +7,7 @@
 import static org.junit.Assert.*;
 import org.junit.*;
 import java.util.*;
-import java.security.InvalidParameterException;
+import java.lang.IllegalArgumentException;
 
 public class BisiestosTest
 {
@@ -23,10 +23,10 @@ public class BisiestosTest
    	year = -4;
    	try {
 		Bisiestos.esBisiesto(year);
-	}catch (InvalidParameterException e) {
+	}catch (IllegalArgumentException e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("IllegalArgument Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.1 y b2.1.2 y b2.2.2 y b2.3.2
@@ -36,10 +36,10 @@ public class BisiestosTest
    	year = -1;
    	try {
 		Bisiestos.esBisiesto(year);
-	}catch (InvalidParameterException e) {
+	}catch (IllegalArgumentException e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("IllegalArgument Exception expected");
 
    }
    //test que implementa la caracterización del bloque b1.1 y b2.2.1 
@@ -50,10 +50,10 @@ public class BisiestosTest
    	year = -100;
    	try {
 		Bisiestos.esBisiesto(year);
-	}catch (InvalidParameterException e) {
+	}catch (IllegalArgumentException e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("IllegalArgument Exception expected");
    }
    
    
@@ -65,10 +65,10 @@ public class BisiestosTest
    	year = -400;
    	try {
 		Bisiestos.esBisiesto(year);
-	}catch (InvalidParameterException e) {
+	}catch (IllegalArgumentException e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("IllegalArgument Exception expected");
    }
    //test que implementa la caracterización del bloque b1.1 y b2.3.2 y b2.2.1
    //numero negativo multiplo de 100 pero no de 400
@@ -78,10 +78,10 @@ public class BisiestosTest
    	year = -200;
    	try {
 		Bisiestos.esBisiesto(year);
-	}catch (InvalidParameterException e) {
+	}catch (IllegalArgumentException e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("IllegalArgument Exception expected");
    }
    //--------
    //BLOQUE 2
@@ -135,10 +135,10 @@ public class BisiestosTest
    	year = 0;
    	try {
 		Bisiestos.esBisiesto(year);
-	}catch (InvalidParameterException e) {
+	}catch (IllegalArgumentException e) {
 		return;
 	}
-	fail ("InvalidParameter Exception expected");
+	fail ("IllegalArgument Exception expected");
    }
   
 }
