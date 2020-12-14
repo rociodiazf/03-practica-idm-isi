@@ -13,14 +13,20 @@ public class Embotelladora{
 	public static int calculaBotellasPequenas(int pequenas, int grandes, int total) throws NoSolution {
 		int bp_necesarias = 0; //botellas pequeñas necesarias para embotellar todo el líquido
 		int litros_grandes = 5; //litros que caben en una botella grande
+		int litros_restantes;
 		if(pequenas < 0 || grandes < 0 || total < 0){
 			throw new NoSolution("All parameters must be positives");
 		}
-		bp_necesarias = total%(grandes*litros_grandes);
-		if(bp_necesarias > pequenas){
+		litros_restantes = total;
+		litros_restantes = litros_restantes - (litros_grandes*grandes);
+		if(litros_restantes<=0){
+			return 0; //hemos embotellado todo el líquido con botellas grandes
+		}
+		bp_necesarias = litros_restantes - pequenas;
+		if(bp_necesarias > 0){
 			throw new NoSolution("There aren't any solution for these parameters");
 		}
-		return bp_necesarias;
+		return litros_restantes;
 	}
 	
 }
