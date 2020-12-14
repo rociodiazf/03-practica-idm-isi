@@ -12,17 +12,20 @@ public class DescuentoBlackFriday{
 	 */
 
 //Cambiar static a public!!
-	 static double precioFinal(double precioOriginal, double porcentajeDescuento)
+	 public static double precioFinal(double precioOriginal, double porcentajeDescuento)
 	 throws InvalidParameterException{
+
+		 if (porcentajeDescuento >= 100 || porcentajeDescuento < 0 || precioOriginal < 0) {
+			 throw new InvalidParameterException("DescuentoBlackFriday.precioFinal");
+		 }
+
 		 Calendar fecha = new GregorianCalendar();
 
 		 //Proponer Fecha
-		 //fecha.set(2000, Calendar.NOVEMBER, 29);
+		 fecha.set(2000, Calendar.NOVEMBER, 29);
 
 		 int mes = fecha.get(Calendar.MONTH);
 		 int dia = fecha.get(Calendar.DAY_OF_MONTH);
-
-
 
 		 if ((mes+1) == 11 && dia == 29) {
 			 // Es Black Friday
@@ -38,10 +41,6 @@ public class DescuentoBlackFriday{
 			 return precioOriginal;
 		 }
 
-	 }
-	 public static void main(String[] args) {
-		 double result = precioFinal(40.00, 50.00);
-		 System.out.println("Precio Final:" + result );
 	 }
 
 }
