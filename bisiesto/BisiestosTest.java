@@ -101,10 +101,10 @@ public class BisiestosTest
    	assertFalse(Bisiestos.esBisiesto(year));
 
    }
-   //test que implementa la caracterización del bloque b1.2 y b2.2.1 
+   //test que implementa la caracterización del bloque b1.2 y b2.2.1 y b2.3.2 
    // positivo multiplo de 100 y no de 400
    @Test
-   public void test_b12_b221()
+   public void test_b12_b221_b232()
    {
    	year = 100;
    	assertFalse(Bisiestos.esBisiesto(year));
