@@ -55,8 +55,8 @@ BLACK FRIDAY:
 	Bloque 2: Caracterización según tipo del parámetro porcentaje descuento
 		b2.1: Números negativos
 		b2.2: Números positivos
-			b2.2: Número mayor a 100
-			b2.2: Número menor o igual a 100
+			b2.2.1: Número mayor a 100
+			b2.2.2: Número menor o igual a 100
 		b2.3: El cero
 	Bloque 3: Caracterización según funcionalidad 
 		b4.1: Es el día del black Friday
