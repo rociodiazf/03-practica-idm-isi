@@ -52,19 +52,25 @@ EMBOTELLADORA:
 		b4.2: Sin solución, es decir, no se puede embotellar todos los litros pedidos
 
 BLACK FRIDAY:
-	Bloque 1: Caracterización según tipo del parámetro precio original
-		b1.1: Números negativos
-		b1.2: Números positivos
-		b1.3: El cero
-	Bloque 2: Caracterización según tipo del parámetro porcentaje descuento
-		b2.1: Números negativos
-		b2.2: Números positivos
-			b2.2.1: Número mayor a 100
-			b2.2.2: Número menor o igual a 100
-		b2.3: El cero
-	Bloque 3: Caracterización según funcionalidad 
-		b4.1: Es el día del black Friday
-		b4.2: No es el día del black Friday		
-		
-
-
+	C1: Caracterización según tipo del parámetro precio original
+		B1: Números positivo
+			B1.1: Números negativos
+			B1.2: Números positivos
+		B2: Caso Frontera: El cero
+			B2.1: Es cero
+			B2.2: No es cero
+	C2: Caracterización según tipo del parámetro porcentaje descuento
+		B3: Números positivo
+			B1.1: Números negativos
+			B1.2: Números positivos
+		B4: Caso Frontera: El cero
+			B2.1: Es cero
+			B2.2: No es cero
+		B5: El cero
+			B6.1: Es cero
+			B6.2: No es cero
+	C3: Caracterización segun la funcionalidad
+		B5: Numero Mayor de 100
+			B3.2.1: Número mayor a 100
+			B3.2.2: Número menor o igual a 100		
+	
