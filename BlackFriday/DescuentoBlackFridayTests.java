@@ -15,9 +15,10 @@ public class DescuentoBlackFridayTests
    private static final double DELTA = 1e-15;
 
    // Test en función del tipo de parámetro
-   //test que implementa la caracterización del bloque b1.1 y b2.1
+
+   //test que implementa C1: B1.1 y C2 : B3.1
    @Test
-   public void test_b11_b21()
+   public void test_b11_b31()
    {
     pOriginal = -5.00;
     porcDescuento = -10.00;
@@ -30,9 +31,9 @@ public class DescuentoBlackFridayTests
 	  fail ("Illegal Argument Exception expected");
    }
 
-   //test que implementa la caracterización del bloque b1.2 y b2.1
+   //test que implementa C1: B1.2 y C2 : B3.1
    @Test
-   public void test_b12_b21()
+   public void test_b12_b31()
    {
     pOriginal = 80.00;
     porcDescuento = -10.00;
@@ -45,9 +46,9 @@ public class DescuentoBlackFridayTests
    fail ("Illegal Argument Exception expected");
    }
 
-   //test que implementa la caracterización del bloque b1.1 y b2.2
+   //test que implementa C1: B1.1 y C2 : B3.2
    @Test
-   public void test_b11_b22()
+   public void test_b11_b32()
    {
     pOriginal = -80.00;
     porcDescuento = 50.00;
@@ -60,9 +61,9 @@ public class DescuentoBlackFridayTests
    fail ("Illegal Argument Exception expected");
    }
 
-   //test que implementa la caracterización del bloque b1.1 y b2.3
+   //test que implementa C1: B1.1 y C2 : B4
    @Test
-   public void test_b11_b23()
+   public void test_b11_b5()
    {
     pOriginal = -80.00;
     porcDescuento = 0.00;
@@ -75,9 +76,9 @@ public class DescuentoBlackFridayTests
    fail ("Illegal Argument Exception expected");
    }
 
-   //test que implementa la caracterización del bloque b1.3 y b2.1
+   //test que implementa C1: B4 y C2 : B3.1
    @Test
-   public void test_b13_b21()
+   public void test_b4_b31()
    {
     pOriginal = 0.00;
     porcDescuento = -80.00;
@@ -91,9 +92,9 @@ public class DescuentoBlackFridayTests
    }
 
 
-  //test que implementa la caracterización del bloque b1.2 y b2.2
+  //test que implementa C1: B1.2 y C2 : B3.2
   @Test
-  public void test_b12_b22()
+  public void test_b12_b32()
   {
   pOriginal = 80.00;
   porcDescuento = 50.00;
@@ -101,27 +102,27 @@ public class DescuentoBlackFridayTests
   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 40.00, DELTA);
   }
 
-  //test que implementa la caracterización del bloque b1.3 y b2.2
+  //test que implementa C1: B2 y C2 : B3.2
   @Test
-  public void test_b13_b22()
+  public void test_b2_b32()
   {
    pOriginal = 0.00;
    porcDescuento = 50.00;
    assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 0.00, DELTA);
   }
 
-  //test que implementa la caracterización del bloque b1.2 y b2.3
+  //test que implementa C1: B1.2 y C2 : B4
   @Test
-  public void test_b12_b23()
+  public void test_b12_b4()
   {
    pOriginal = 45.00;
    porcDescuento = 0.00;
    assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento), 45.00, DELTA);
   }
 
-  //test que implementa la caracterización del bloque b1.3 y b2.3
+  //test que implementa C1: B2 y C2 : B4
   @Test
-  public void test_b13_b23()
+  public void test_b2_b4()
   {
    pOriginal = 0.00;
    porcDescuento = 0.00;
@@ -129,9 +130,10 @@ public class DescuentoBlackFridayTests
   }
 
   //Segun el porcentaje de descuento...
-  //Test que implementa la caracterización del bloque b2.2.1
+
+  //test que implementa C1: B1.2 y C3 : B5.1
   @Test
-  public void test_b221()
+  public void test_b12_b51()
   {
    pOriginal = 50.00;
    porcDescuento = 150.00;
@@ -143,7 +145,7 @@ public class DescuentoBlackFridayTests
    fail ("Illegal Argument Exception expected");
   }
 
-  //Test que implementa una caso frontera
+  //caso frontera
   @Test
   public void test_CasoFrontera1()
   {
@@ -170,7 +172,8 @@ public class DescuentoBlackFridayTests
   }
 
 
-  //Duda
+  //Duda ¿Son REALMENTE necesarios?
+  //Ya se calcula el error de cada uno de ellos por separado en los test anteriores
   //Test que implementa la caracterización del bloque b1.1 y b2.2.1
   @Test
   public void test_b11_b221()
