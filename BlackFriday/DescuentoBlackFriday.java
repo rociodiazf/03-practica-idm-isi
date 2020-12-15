@@ -11,7 +11,6 @@ public class DescuentoBlackFriday{
 	 *			   es negativo o mayor que 100.
 	 */
 
-//Cambiar static a public!!
 	 public static double precioFinal(double precioOriginal, double porcentajeDescuento)
 	 throws InvalidParameterException{
 
