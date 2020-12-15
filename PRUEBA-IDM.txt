@@ -70,7 +70,11 @@ BLACK FRIDAY:
 			B6.1: Es cero
 			B6.2: No es cero
 	C3: Caracterización segun la funcionalidad
-		B5: Numero Mayor de 100
-			B3.2.1: Número mayor a 100
-			B3.2.2: Número menor o igual a 100		
+		B6: Numero Mayor de 100
+			B6.1: Número mayor a 100
+			B6.2: Número menor o igual a 100
+		B7: Dia del BlackFriday
+			B7.1: Es BlackFriday
+			B7.2: No es BlackFriday
+					
 	
