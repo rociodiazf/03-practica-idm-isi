@@ -1,4 +1,4 @@
-import java.security.InvalidParameterException;
+import java.lang.IllegalArgumentException;
 import java.util.*;
 
 public class DescuentoBlackFriday{
@@ -7,15 +7,15 @@ public class DescuentoBlackFriday{
 	 * 				porcentajeDescuento es el descuento a aplicar expresado como un porcentaje
 	 * @return el precio final teniendo en cuenta que si es blackFriday (29 de noviembre)
 	 * 				 se aplica un descuento de porcentajeDescuento
-	 * @throws InvalidParameterException si precioOriginal es negativo o si porcentaje
+	 * @throws IllegalArgumentException si precioOriginal es negativo o si porcentaje
 	 *			   es negativo o mayor que 100.
 	 */
 
 	 public static double precioFinal(double precioOriginal, double porcentajeDescuento)
-	 throws InvalidParameterException{
+	 throws IllegalArgumentException{
 
 		 if (porcentajeDescuento >= 100 || porcentajeDescuento < 0 || precioOriginal < 0) {
-			 throw new InvalidParameterException("DescuentoBlackFriday.precioFinal");
+			 throw new IllegalArgumentException("DescuentoBlackFriday.precioFinal");
 		 }
 
 		 Calendar fecha = new GregorianCalendar();

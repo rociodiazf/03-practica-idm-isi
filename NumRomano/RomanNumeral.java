@@ -1,11 +1,11 @@
-import java.security.InvalidParameterException;
+import java.lang.IllegalArgumentException;
 import java.util.*;
 
 public class RomanNumeral{
 	/*
 	* @param s es un número romano
 	* @return el número s en base 10
-	* @throws InvalidParameterException si s no es un número romano
+	* @throws IllegalArgumentException si s no es un número romano
 	*/
 
 	private static void letrasProhibidasRepetidas(String s){
@@ -19,7 +19,7 @@ public class RomanNumeral{
 			for (int j = 0; j < s.length(); j++) {
 				if (j + 2 <= s.length()) {
 					if (s.charAt(j) == letra && s.charAt(j+1) == letra) {
-							throw new InvalidParameterException("RomanNumeral.convierte");
+							throw new IllegalArgumentException("RomanNumeral.convierte");
 					}
 				}
 			}
@@ -38,7 +38,7 @@ public class RomanNumeral{
 				if (j + 4 <= s.length()) {
 					if (s.charAt(j) == letra && s.charAt(j+1) == letra
 							&& s.charAt(j+2) == letra && s.charAt(j+3) == letra) {
-							throw new InvalidParameterException("RomanNumeral.convierte");
+							throw new IllegalArgumentException("RomanNumeral.convierte");
 					}
 				}
 			}
@@ -48,7 +48,7 @@ public class RomanNumeral{
 
 
 
-	public static int convierte(String s)throws InvalidParameterException{
+	public static int convierte(String s)throws IllegalArgumentException{
 
 		//Diccionario
 		HashMap<Character, Integer> diccionario = new HashMap<Character, Integer>();
@@ -67,13 +67,13 @@ public class RomanNumeral{
 
 		//String null
 		if (s == null || s.length() == 0) {
-			throw new InvalidParameterException("RomanNumeral.convierte");
+			throw new IllegalArgumentException("RomanNumeral.convierte");
 		}
 
 		//Letras dentro del diccionario
 		for (int i = 0; i < s.length(); i++ ) {
 			if(diccionario.get(s.charAt(i)) == null){
-				throw new InvalidParameterException("RomanNumeral.convierte");
+				throw new IllegalArgumentException("RomanNumeral.convierte");
 			}
 		}
 

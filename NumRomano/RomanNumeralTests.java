@@ -152,6 +152,4 @@ public class RomanNumeralTests
    fail ("Illegal Argument Exception expected");
   }
 
-  //Test dia Black Friday
-
 }
