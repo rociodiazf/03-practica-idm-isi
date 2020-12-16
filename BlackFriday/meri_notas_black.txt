@@ -1,0 +1,23 @@
+precios neg
+bprecios pos
+precios 0
+
+porc neg
+porc 0
+porc pos>100
+porc pos<100
+
+fecha es 29-nov
+fecha no es 29-nov
+	
+en total 3*4*2 = 24 combinaciones de bloques, al menos 24 tests. Probar los casos frontera
+
+-----
+ejemplo1: precio >0, 100>%>0, no es 29 nov
+	precio devuelto = precio original
+
+ejemplo2: precio >0, 100>%>0, es 29 nov
+	precio devuelto = precio_or * (1-%desc)
+	
+hay dependencia no explícita del código respecto a la fecha, vamos a inyrctar la fecha explicitamente. Ahora la fecha la va a coger del parametro. Esto haría mas observable el metodo. A esto se le llama refactorizar el método, o inyección de dependencias.
+
