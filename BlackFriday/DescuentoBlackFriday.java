@@ -11,17 +11,17 @@ public class DescuentoBlackFriday{
 	 *			   es negativo o mayor que 100.
 	 */
 
-	 public static double precioFinal(double precioOriginal, double porcentajeDescuento)
-	 throws IllegalArgumentException{
+	 public static double precioFinal(double precioOriginal, double porcentajeDescuento,
+	 	 Calendar fecha) throws IllegalArgumentException{
 
 		 if (porcentajeDescuento >= 100 || porcentajeDescuento < 0 || precioOriginal < 0) {
 			 throw new IllegalArgumentException("DescuentoBlackFriday.precioFinal");
 		 }
 
-		 Calendar fecha = new GregorianCalendar();
+		 //Calendar fecha = new GregorianCalendar();
 
 		 //Proponer Fecha
-		 fecha.set(2000, Calendar.NOVEMBER, 29);
+		 //fecha.set(2000, Calendar.NOVEMBER, 29);
 
 		 int mes = fecha.get(Calendar.MONTH);
 		 int dia = fecha.get(Calendar.DAY_OF_MONTH);
