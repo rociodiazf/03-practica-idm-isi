@@ -12,18 +12,26 @@ public class DescuentoBlackFridayTests
    private double pOriginal;
    private double porcDescuento;
 
+   /*Debemos tener una variable DELTA a causa de que el uso normal de
+    *assertEquals de jUnit está obsoleto.
+    *La solución que he encontrado es usar esta variable como tamaño del
+    *error para poder comparar dos tipos DOUBLE.
+    */
    private static final double DELTA = 1e-15;
 
-   private static Calendar dameFechaHoy (){
+   private static Calendar dameFechaHoy(){
     Calendar fechaHoy = new GregorianCalendar();
     return fechaHoy;
    }
 
-   private static Calendar dameFechaBlackFriday (){
+   private static Calendar dameFechaBlackFriday(){
     Calendar fechaBK = new GregorianCalendar();
     fechaBK.set(2000, Calendar.NOVEMBER, 29);
     return fechaBK;
    }
+
+   private Calendar fechaHoy = dameFechaHoy();
+   private Calendar fechaBK = dameFechaBlackFriday();
 
 
    // Test en función del tipo de parámetro
@@ -37,7 +45,7 @@ public class DescuentoBlackFridayTests
     porcDescuento = -10.00;
 
     try {
-      DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday());
+      DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK);
     }catch (IllegalArgumentException e) {
 		    return;
 	  }
@@ -52,7 +60,7 @@ public class DescuentoBlackFridayTests
     porcDescuento = -10.00;
 
     try {
-      DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday());
+      DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK);
     }catch (IllegalArgumentException e) {
        return;
    }
@@ -67,7 +75,7 @@ public class DescuentoBlackFridayTests
     porcDescuento = 50.00;
 
     try {
-      DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday());
+      DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK);
     }catch (IllegalArgumentException e) {
        return;
    }
@@ -82,7 +90,7 @@ public class DescuentoBlackFridayTests
     porcDescuento = 0.00;
 
     try {
-      DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento,dameFechaBlackFriday());
+      DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento,fechaBK);
     }catch (IllegalArgumentException e) {
        return;
    }
@@ -97,7 +105,7 @@ public class DescuentoBlackFridayTests
     porcDescuento = -80.00;
 
     try {
-      DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento,dameFechaBlackFriday());
+      DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento,fechaBK);
     }catch (IllegalArgumentException e) {
        return;
    }
@@ -112,7 +120,7 @@ public class DescuentoBlackFridayTests
   pOriginal = 80.00;
   porcDescuento = 50.00;
 
-  assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday()), 40.00, DELTA);
+  assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK), 40.00, DELTA);
   }
 
   //test que implementa C1: B2 y C2 : B3.2
@@ -121,7 +129,7 @@ public class DescuentoBlackFridayTests
   {
    pOriginal = 0.00;
    porcDescuento = 50.00;
-   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday()), 0.00, DELTA);
+   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK), 0.00, DELTA);
   }
 
   //test que implementa C1: B1.2 y C2 : B4
@@ -130,7 +138,7 @@ public class DescuentoBlackFridayTests
   {
    pOriginal = 45.00;
    porcDescuento = 0.00;
-   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday()), 45.00, DELTA);
+   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK), 45.00, DELTA);
   }
 
   //test que implementa C1: B2 y C2 : B4
@@ -139,7 +147,7 @@ public class DescuentoBlackFridayTests
   {
    pOriginal = 0.00;
    porcDescuento = 0.00;
-   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday()), 0.00, DELTA);
+   assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK), 0.00, DELTA);
   }
 
   //Segun el porcentaje de descuento...
@@ -151,7 +159,7 @@ public class DescuentoBlackFridayTests
    pOriginal = 50.00;
    porcDescuento = 150.00;
    try {
-     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday());
+     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK);
    }catch (IllegalArgumentException e) {
       return;
    }
@@ -165,7 +173,7 @@ public class DescuentoBlackFridayTests
    pOriginal = 50.00;
    porcDescuento = 100.00;
    try {
-     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday());
+     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK);
    }catch (IllegalArgumentException e) {
       return;
    }
@@ -178,15 +186,12 @@ public class DescuentoBlackFridayTests
   @Test
   public void test_CasoFrontera2()
   {
-     pOriginal = 50.00;
+     pOriginal = 0.50;
      porcDescuento = 0.00;
-     assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday()), 50.00, DELTA);
+     assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK), 0.50, DELTA);
 
   }
-
-
-  //Duda ¿Son REALMENTE necesarios?
-  //Ya se calcula el error de cada uno de ellos por separado en los test anteriores
+  //TEST extras
   //Test que implementa la caracterización del bloque b1.1 y b2.2.1
   @Test
   public void test_b11_b221()
@@ -194,7 +199,7 @@ public class DescuentoBlackFridayTests
    pOriginal = -50.00;
    porcDescuento = 200.00;
    try {
-     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday());
+     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK);
    }catch (IllegalArgumentException e) {
       return;
    }
@@ -208,7 +213,7 @@ public class DescuentoBlackFridayTests
    pOriginal = -50.00;
    porcDescuento = 10.00;
    try {
-     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday());
+     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK);
    }catch (IllegalArgumentException e) {
       return;
    }
@@ -222,7 +227,7 @@ public class DescuentoBlackFridayTests
    pOriginal = -50.00;
    porcDescuento = 100.00;
    try {
-     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday());
+     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK);
    }catch (IllegalArgumentException e) {
       return;
    }
@@ -234,23 +239,24 @@ public class DescuentoBlackFridayTests
   public void test_b11_b221_frontera2()
   {
    pOriginal = -50.00;
-   porcDescuento = 100.00;
+   porcDescuento = 0.00;
    try {
-     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday());
+     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK);
    }catch (IllegalArgumentException e) {
       return;
    }
    fail ("Illegal Argument Exception expected");
   }
-  // ES dia de blackFriday
+
   @Test
-  public void test_29Nov()
+  public void test_CasoExtremo()
   {
-     pOriginal = 50.00;
-     porcDescuento = 0.00;
-     assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaBlackFriday()), 50.00, DELTA);
+     pOriginal = 5.99;
+     porcDescuento = 20.00;
+     assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaBK), 4.792, DELTA);
 
   }
+
 
   //AHORA REPETIMOS TEST, CUANDO NO SEA EL DIA DE BLACKFRIDAY
   // Test en función del tipo de parámetro
@@ -264,7 +270,7 @@ public class DescuentoBlackFridayTests
    porcDescuento = -10.00;
 
    try {
-     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy());
+     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy);
    }catch (IllegalArgumentException e) {
        return;
    }
@@ -279,7 +285,7 @@ public class DescuentoBlackFridayTests
    porcDescuento = -10.00;
 
    try {
-     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy());
+     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy);
    }catch (IllegalArgumentException e) {
       return;
   }
@@ -294,7 +300,7 @@ public class DescuentoBlackFridayTests
    porcDescuento = 50.00;
 
    try {
-     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy());
+     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy);
    }catch (IllegalArgumentException e) {
       return;
   }
@@ -309,7 +315,7 @@ public class DescuentoBlackFridayTests
    porcDescuento = 0.00;
 
    try {
-     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento,dameFechaHoy());
+     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento,fechaHoy);
    }catch (IllegalArgumentException e) {
       return;
   }
@@ -324,7 +330,7 @@ public class DescuentoBlackFridayTests
    porcDescuento = -80.00;
 
    try {
-     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento,dameFechaHoy());
+     DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento,fechaHoy);
    }catch (IllegalArgumentException e) {
       return;
   }
@@ -339,7 +345,7 @@ public class DescuentoBlackFridayTests
  pOriginal = 80.00;
  porcDescuento = 50.00;
 
- assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy()), 80.00, DELTA);
+ assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy), 80.00, DELTA);
  }
 
  //test que implementa C1: B2 y C2 : B3.2
@@ -348,7 +354,7 @@ public class DescuentoBlackFridayTests
  {
   pOriginal = 0.00;
   porcDescuento = 50.00;
-  assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy()), 0.00, DELTA);
+  assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy), 0.00, DELTA);
  }
 
  //test que implementa C1: B1.2 y C2 : B4
@@ -357,7 +363,7 @@ public class DescuentoBlackFridayTests
  {
   pOriginal = 45.00;
   porcDescuento = 0.00;
-  assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy()), 45.00, DELTA);
+  assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy), 45.00, DELTA);
  }
 
  //test que implementa C1: B2 y C2 : B4
@@ -366,7 +372,7 @@ public class DescuentoBlackFridayTests
  {
   pOriginal = 0.00;
   porcDescuento = 0.00;
-  assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy()), 0.00, DELTA);
+  assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy), 0.00, DELTA);
  }
 
  //Segun el porcentaje de descuento...
@@ -378,7 +384,7 @@ public class DescuentoBlackFridayTests
   pOriginal = 50.00;
   porcDescuento = 150.00;
   try {
-    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy());
+    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy);
   }catch (IllegalArgumentException e) {
      return;
   }
@@ -392,7 +398,7 @@ public class DescuentoBlackFridayTests
   pOriginal = 50.00;
   porcDescuento = 100.00;
   try {
-    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy());
+    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy);
   }catch (IllegalArgumentException e) {
      return;
   }
@@ -407,7 +413,7 @@ public class DescuentoBlackFridayTests
  {
     pOriginal = 50.00;
     porcDescuento = 0.00;
-    assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy()), 50.00, DELTA);
+    assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy), 50.00, DELTA);
 
  }
 
@@ -421,7 +427,7 @@ public class DescuentoBlackFridayTests
   pOriginal = -50.00;
   porcDescuento = 200.00;
   try {
-    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy());
+    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy);
   }catch (IllegalArgumentException e) {
      return;
   }
@@ -435,7 +441,7 @@ public class DescuentoBlackFridayTests
   pOriginal = -50.00;
   porcDescuento = 10.00;
   try {
-    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy());
+    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy);
   }catch (IllegalArgumentException e) {
      return;
   }
@@ -449,7 +455,7 @@ public class DescuentoBlackFridayTests
   pOriginal = -50.00;
   porcDescuento = 100.00;
   try {
-    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy());
+    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy);
   }catch (IllegalArgumentException e) {
      return;
   }
@@ -463,7 +469,7 @@ public class DescuentoBlackFridayTests
   pOriginal = -50.00;
   porcDescuento = 100.00;
   try {
-    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy());
+    DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy);
   }catch (IllegalArgumentException e) {
      return;
   }
@@ -475,7 +481,7 @@ public class DescuentoBlackFridayTests
  {
     pOriginal = 50.00;
     porcDescuento = 0.00;
-    assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, dameFechaHoy()), 50.00, DELTA);
+    assertEquals(DescuentoBlackFriday.precioFinal(pOriginal, porcDescuento, fechaHoy), 50.00, DELTA);
 
  }
 

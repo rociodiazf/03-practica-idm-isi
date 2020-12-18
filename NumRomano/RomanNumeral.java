@@ -19,7 +19,7 @@ public class RomanNumeral{
 			for (int j = 0; j < s.length(); j++) {
 				if (j + 2 <= s.length()) {
 					if (s.charAt(j) == letra && s.charAt(j+1) == letra) {
-							throw new IllegalArgumentException("RomanNumeral.convierte");
+							throw new IllegalArgumentException("Letra V, L ó D repetida dos veces o más");
 					}
 				}
 			}
@@ -38,15 +38,12 @@ public class RomanNumeral{
 				if (j + 4 <= s.length()) {
 					if (s.charAt(j) == letra && s.charAt(j+1) == letra
 							&& s.charAt(j+2) == letra && s.charAt(j+3) == letra) {
-							throw new IllegalArgumentException("RomanNumeral.convierte");
+							throw new IllegalArgumentException("Letra demasiadas veces repetida");
 					}
 				}
 			}
 		}
 	}
-
-
-
 
 	public static int convierte(String s)throws IllegalArgumentException{
 
@@ -67,13 +64,13 @@ public class RomanNumeral{
 
 		//String null
 		if (s == null || s.length() == 0) {
-			throw new IllegalArgumentException("RomanNumeral.convierte");
+			throw new IllegalArgumentException("String vacío");
 		}
 
 		//Letras dentro del diccionario
 		for (int i = 0; i < s.length(); i++ ) {
 			if(diccionario.get(s.charAt(i)) == null){
-				throw new IllegalArgumentException("RomanNumeral.convierte");
+				throw new IllegalArgumentException("Letras fuera del diccionario");
 			}
 		}
 

@@ -152,4 +152,31 @@ public class RomanNumeralTests
    fail ("Illegal Argument Exception expected");
   }
 
+  //test que implementa C2, B5
+  @Test
+  public void test_C1_B5_3()
+  {
+   String s = new String ("CCCCI");
+
+   try {
+     RomanNumeral.convierte(s);
+   }catch (IllegalArgumentException e) {
+       return;
+   }
+   fail ("Illegal Argument Exception expected");
+  }
+  //test que implementa C2, B5
+  @Test
+  public void test_C1_B5_4()
+  {
+   String s = new String ("MMMMXV");
+
+   try {
+     RomanNumeral.convierte(s);
+   }catch (IllegalArgumentException e) {
+       return;
+   }
+   fail ("Illegal Argument Exception expected");
+  }
+
 }

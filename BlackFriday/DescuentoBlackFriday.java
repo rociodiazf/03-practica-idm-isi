@@ -18,11 +18,6 @@ public class DescuentoBlackFriday{
 			 throw new IllegalArgumentException("DescuentoBlackFriday.precioFinal");
 		 }
 
-		 //Calendar fecha = new GregorianCalendar();
-
-		 //Proponer Fecha
-		 //fecha.set(2000, Calendar.NOVEMBER, 29);
-
 		 int mes = fecha.get(Calendar.MONTH);
 		 int dia = fecha.get(Calendar.DAY_OF_MONTH);
 
